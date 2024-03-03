@@ -92,3 +92,5 @@ sw.*
 #환경변수
 *.env.*
 .env.locd
+*.env
+*.locp
