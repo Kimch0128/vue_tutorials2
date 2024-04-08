@@ -35,10 +35,10 @@
           </div>
           <Map/>
           <nav>
-            <font-awesome-icon icon="home" />
-            <font-awesome-icon icon="search-location" />
-            <font-awesome-icon icon="chart-line" />
-            <font-awesome-icon icon="cog" /> 
+            <font-awesome-icon icon="home" class="white-icon"/>
+            <font-awesome-icon icon="search-location" class="white-icon"/>
+            <font-awesome-icon icon="chart-line" class="white-icon"/>
+            <font-awesome-icon icon="cog" class="white-icon"/> 
               <!-- <i class="fas fa-home"></i>
               <i class="fas fa-search-location"></i>
               <i class="fas fa-chart-line"></i>

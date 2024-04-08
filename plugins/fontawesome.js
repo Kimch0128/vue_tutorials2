@@ -1,8 +1,15 @@
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { fas } from '@fortawesome/free-solid-svg-icons';
+// For Nuxt 3
+import { library, config } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 
-library.add(fas);
+// This is important, we are going to let Nuxt worry about the CSS
+config.autoAddCss = false
 
-export default defineNuxtPlugin(() => {
-  // 아무것도 필요하지 않습니다. 가져오기만 하면 아이콘이 등록됩니다.
-});
+// You can add your icons directly in this plugin. See other examples for how you
+// can add other styles or just individual icons.
+library.add(fas)
+
+export default defineNuxtPlugin((nuxtApp) => {
+  nuxtApp.vueApp.component('font-awesome-icon', FontAwesomeIcon, {})
+})

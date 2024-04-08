@@ -50,10 +50,16 @@
             </div>
         </div>
         <nav>
+<!--             
             <i class="fas fa-home"></i>
             <i class="fas fa-search-location"></i>
             <i class="fas fa-chart-line"></i>
-            <i class="fas fa-cog"></i>
+            <i class="fas fa-cog"></i> -->
+
+            <font-awesome-icon icon='fas fa-home' class="white-icon"></font-awesome-icon>
+            <font-awesome-icon icon="fas fa-search-location" class="white-icon"></font-awesome-icon>
+            <font-awesome-icon icon="fas fa-chart-line" class="white-icon"></font-awesome-icon>
+            <font-awesome-icon icon="fas fa-cog" class="white-icon"></font-awesome-icon>
         </nav>
     </div>
 </template>
@@ -135,7 +141,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/scss/main.scss";
+@import "/assets/scss/main.scss";
 
 .leftContainer {
     width: 324px;

@@ -1,6 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import path from 'node:path';
 require("dotenv").config({path:process.env.ENV_PATH})
+
+
 
 module.exports = {
   runtimeConfig:{
@@ -53,9 +56,10 @@ module.exports = {
     '@/assets/scss/main.scss',
     '@/assets/scss/mainview.scss',
     '@/assets/scss/subview.scss',
+    '@fortawesome/fontawesome-svg-core/styles.css',
   ],
   plugins:[
-    '~/plugins/fontawesome.js',
+    {src:'~/plugins/fontawesome.js',},
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
