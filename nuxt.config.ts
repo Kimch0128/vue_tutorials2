@@ -43,7 +43,7 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css'},
+      // { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css'},
       { rel: 'preconnect', href: 'https://fonts.googleapis.com'},
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin:true},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap'},
@@ -57,6 +57,7 @@ module.exports = {
     '@/assets/scss/mainview.scss',
     '@/assets/scss/subview.scss',
     '@fortawesome/fontawesome-svg-core/styles.css',
+    // 'https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css'
   ],
   plugins:[
     {src:'~/plugins/fontawesome.js',},
