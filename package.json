@@ -19,7 +19,7 @@
     "@nuxtjs/style-resources": "^1.2.2",
     "@vue/compiler-sfc": "^3.4.21",
     "cross-env": "^7.0.3",
-    "dayjs": "^1.11.10",
+    "dayjs-nuxt": "^2.1.9",
     "defu": "^6.1.4",
     "nuxt": "^3.10.3",
     "reset-css": "^5.0.1",

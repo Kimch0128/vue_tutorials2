@@ -2,8 +2,8 @@
     <div class="rightContainer">
       <div id="cityNameBox">
               <div class="cityName">
-                  <p>san fran</p>
-                  <p>jan</p>
+                  <p>{{cityName}}</p>
+                  <p>{{ currentTime }}</p>
               </div>
           </div>
           <div id="contentsBox">
@@ -16,6 +16,7 @@
               <div class="weatherBox">
                   <div class="airCondition">
                       <p>매우추움</p>
+                      <!-- <p>{{ feeling }}</p> -->
                   </div>
                   <div class="detail">
                       <div class="title">ssss</div>
@@ -48,10 +49,68 @@
   </template>
 
 <script>
-import Map from '../components/Map.vue'
+import { faChessBishop } from '@fortawesome/free-solid-svg-icons';
+
+
 export default {
     components:{
         Map,
+    },
+    setup(){
+        let dayjs = useDayjs();
+        let currentTime = dayjs().format("YYYY. MM. DD. ddd");
+        let cityName = ref("");
+        let feeling = ref("")
+
+        const config = useRuntimeConfig();
+        let initiaLat = 36.5683;
+        let initiaLon = 126.9778;
+        let url = `https://api.openweathermap.org/data/3.0/onecall`
+
+        //openweather api 조회 함수
+        const fetchOpenWeatherApi = async () =>{
+            await useFetch(url,{
+                method: 'get',
+                query:{lat:initiaLat,
+                    lon:initiaLon,
+                    appid:config.public.OPEN_WEATHER_API_KEY,
+                    units:'metric'}
+            },).then(response=>{
+                let data = response.data.value;
+
+                //초기데이터
+                let isInitialData = data.current;
+                //초기 도시이름 데이터
+                let isInitialCityName = data.timezone;
+                //초기데이터 > 체감온도
+                let isFeelLikeTemp = isInitialData.feels_like;
+                //초기데이터 > 일출시간
+                let isTimeOfSunrise = isInitialData.sunrise
+                //초기데이터 > 일몰시간
+                let isTimeOfSunset = isInitialData.sunset
+                //초기데이터 > 가시거리
+                let isLineOfSight = isInitialData.visibility
+
+                cityName.value = isInitialCityName.split("/").at(-1);;
+                feeling.value = isFeelLikeTemp;
+
+                console.log(cityName.value);
+                console.log(feeling.value)
+            })
+            .catch(
+                error=>{
+                    console.log(error);
+                }
+            );
+        };
+
+        fetchOpenWeatherApi();
+        // const { data, pending, error, refresh } = 
+        return{
+            currentTime,
+            cityName,
+            feeling
+        }
     }
 }
 </script>
