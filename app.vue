@@ -1,22 +1,22 @@
 <template>
   <div class="wrap">
     <div class="container">
-      <!-- <MainVue/> -->
+      <MainVue/>
       <SubView/>
     </div>
   </div>
 </template>
 
 <script>
-// import MainVue from "~/components/MainVue.vue";
-// import SubView from "~/components/SubView.vue";
+import MainVue from "~/components/MainVue.vue";
+import SubView from "~/components/SubView.vue";
 
 export default {
   name: 'IndexPage',
-  // components:{
-  //   // MainVue,
-  //   SubView
-  // },
+  components:{
+    MainVue,
+    SubView
+  },
   mounted(){
   }
 }
