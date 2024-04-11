@@ -67,7 +67,7 @@ export default {
         const Unix_timestamp = (dt) => {
             let date = new Date(dt * 1000);
 
-            return date.getDate() + "일 " + date.getHours() + "시";
+            return date.getHours().toString().padStart(2,"0") + "시";
         }
 
         //openweather 데이터 조회
@@ -112,15 +112,25 @@ export default {
                     // if(isFeelLikeTemp <= 10) feeling.value = "추움";
                     // if(isFeelLikeTemp <= 0) feeling.value = "매우추움";
 
-                    //임의로 변경 : if로만 구성하면 모든 if문 탐색함
-                    if(isFeelLikeTemp <=0) feeling.value = "매우추움"
-                    else if(isFeelLikeTemp <= 10) feeling.value = "추움"
-                    else if(isFeelLikeTemp <= 15) feeling.value = "쌀쌀함"
-                    else if(isFeelLikeTemp <= 20) feeling.value = "선선함"
-                    else if(isFeelLikeTemp <= 25) feeling.value = "보통"
-                    else if(isFeelLikeTemp <= 30) feeling.value = "더움"
-                    else feeling.value = "매우더움"
+                    //임의로 변경 : if로만 구성하면 모든 if문 탐색함 
+                    // if(isFeelLikeTemp <=0) feeling.value = "매우추움"
+                    // else if(isFeelLikeTemp <= 10) feeling.value = "추움"
+                    // else if(isFeelLikeTemp <= 15) feeling.value = "쌀쌀함"
+                    // else if(isFeelLikeTemp <= 20) feeling.value = "선선함"
+                    // else if(isFeelLikeTemp <= 25) feeling.value = "보통"
+                    // else if(isFeelLikeTemp <= 30) feeling.value = "더움"
+                    // else feeling.value = "매우더움"
 
+                    const tempPoints = [0,10,15,20,25,30];
+                    const levels = ["매우추움", "추움", "쌀쌀함", "선선함", "보통", "더움", "매우더움"]
+
+                    let index = 0;
+                    for(const point of tempPoints){
+                        if(isFeelLikeTemp<=point) break;
+                        index++;
+                    }
+
+                    feeling.value = levels[index];
                     let isProcesseData = [
                         { name: "일출시간", value: Unix_timestamp(isTimeOfSunrise) },
                         { name: "일몰시간", value: Unix_timestamp(isTimeOfSunset) },
