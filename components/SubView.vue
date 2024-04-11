@@ -100,16 +100,19 @@ export default {
                     let isFeelLikeTemp = initiaData.feels_like;
                     let isTimeOfSunrise = initiaData.sunrise;
                     let isTimeOfSunset = initiaData.sunset;
-                    let isLineOfSight = initiaData.visibility;
+                    let isLineOfSight = initiaData.visibility
 
-                    if(isFeelLikeTemp > 30) feeling.value = "매우더움";
-                    else if(isFeelLikeTemp <= 30) feeling.value = "더움";
-                    else if(isFeelLikeTemp <= 25) feeling.value = "보통";
-                    else if(isFeelLikeTemp <= 20) feeling.value = "선선함";
-                    else if(isFeelLikeTemp <= 15) feeling.value = "쌀쌀함";
-                    else if(isFeelLikeTemp <= 10) feeling.value = "추움";
-                    else feeling.value = "매우추움";
+                    //강의 내용
+                    // if(isFeelLikeTemp > 30) feeling.value = "매우더움";
+                    // if(isFeelLikeTemp <= 30) feeling.value = "더움";
+                    // if(isFeelLikeTemp <= 25) feeling.value = "보통";
+                    // if(isFeelLikeTemp <= 20) feeling.value = "선선함";
+                    // if(isFeelLikeTemp <= 15) feeling.value = "쌀쌀함";
+                    // if(isFeelLikeTemp <= 15) feeling.value = "쌀쌀함";
+                    // if(isFeelLikeTemp <= 10) feeling.value = "추움";
+                    // if(isFeelLikeTemp <= 0) feeling.value = "매우추움";
 
+                    //임의로 변경 : if로만 구성하면 모든 if문 탐색함
                     if(isFeelLikeTemp <=0) feeling.value = "매우추움"
                     else if(isFeelLikeTemp <= 10) feeling.value = "추움"
                     else if(isFeelLikeTemp <= 15) feeling.value = "쌀쌀함"
