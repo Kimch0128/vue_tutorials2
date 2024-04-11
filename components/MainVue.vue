@@ -134,7 +134,7 @@ export default {
         Unix_timestamp (dt) {
             let date = new Date(dt*1000);
             
-            return date.getDate()+"일 "+date.getHours()+"시";
+            return date.getDate()+"일 "+date.getHours().toString().padStart(2,"0")+"시";
         },
     },
 }
