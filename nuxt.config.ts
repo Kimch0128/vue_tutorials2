@@ -61,6 +61,7 @@ module.exports = {
   ],
   plugins:[
     {src:'~/plugins/fontawesome.js',},
+    // { src: 'dayjs', mode: 'client' },
   ],
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
