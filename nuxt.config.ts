@@ -73,11 +73,22 @@ module.exports = {
     // '@nuxtjs/dotenv',
   ],
   modules: [
+    'dayjs-nuxt',
   ],
   axios: {
     // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
     baseURL: '/',
   },
+  dayjs: {
+    locales: ['ko'],
+    plugins: ['relativeTime', 'utc', 'timezone'],
+    defaultLocale: 'ko',
+    defaultTimezone: 'Asia/Seoul',
+  },
+  // dayjs: {
+    // locales: ['ko'],
+    // defaultTimezone: 'Asia/Seoul',
+  // },
   // dotenv:{
   //   path:'.locd.env'
   // },
