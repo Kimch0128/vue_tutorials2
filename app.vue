@@ -8,14 +8,14 @@
 </template>
 
 <script>
-import MainVue from "~/components/MainVue.vue";
-import SubView from "~/components/SubView.vue";
+// import MainVue from "~/components/MainVue.vue";
+// import SubView from "~/components/SubView.vue";
 
 export default {
   name: 'IndexPage',
   components:{
-    MainVue,
-    SubView
+    // MainVue,
+    // SubView
   },
   mounted(){
   }

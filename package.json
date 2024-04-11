@@ -27,6 +27,7 @@
     "sass-loader": "^14.1.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "vue-server-renderer": "@vue/compiler-sfc"
+    "vue-server-renderer": "@vue/compiler-sfc",
+    "vuex": "^4.0.2"
   }
 }
